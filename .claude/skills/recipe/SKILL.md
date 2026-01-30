@@ -11,7 +11,11 @@ Generate delicious, personalized recipes that respect your dietary requirements.
 
 ### Step 1: Load Context (Silent)
 
-Read all data files WITHOUT outputting their contents to the user:
+**First, verify the data files exist** by running Glob with pattern `data/*.md`.
+
+Then read ALL found data files using the Read tool. Do not summarize or output their contents to the user.
+
+Expected files:
 - `data/dietary-requirements.md` - Medical constraints (NEVER violate)
 - `data/preferences.md` - Personal preferences
 - `data/macros.md` - Calorie and macro targets
@@ -19,6 +23,8 @@ Read all data files WITHOUT outputting their contents to the user:
 - `data/recipe-format.md` - Output template
 - `data/recipe-best-practices.md` - Culinary principles
 - `data/prep-timings.md` - Adjusted time estimates for user's cooking profile
+
+**Important:** Do not assume files are missing without actually checking. If Glob returns files, read them. If any expected files are genuinely missing, inform the user which ones and offer to continue with the embedded Critical Constraints as a fallback.
 
 Internalize these constraints. Do not summarize them to the user.
 
