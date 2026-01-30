@@ -1,0 +1,22 @@
+# Generated recipes (personal/private)
+recipes/**/*.md
+recipes/**/*.paprikarecipe
+
+# Keep the directory structure
+!recipes/.gitkeep
+!recipes/1-serving/.gitkeep
+!recipes/2-serving/.gitkeep
+
+# Claude Code local settings (may contain personal preferences)
+.claude/settings.local.json
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
