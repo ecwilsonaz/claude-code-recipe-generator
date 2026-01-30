@@ -7,6 +7,10 @@ recipes/**/*.paprikarecipe
 !recipes/1-serving/.gitkeep
 !recipes/2-serving/.gitkeep
 
+# Generated shopping lists (personal/private)
+lists/**/*.md
+!lists/.gitkeep
+
 # Claude Code local settings (may contain personal preferences)
 .claude/settings.local.json
 

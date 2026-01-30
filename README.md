@@ -22,7 +22,7 @@ This is a **Claude Code custom skill** — a structured prompt system that turns
 
 1. **Clone this repository** into your projects folder:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/claude-code-recipe-generator.git
+   git clone https://github.com/ecwilsonaz/claude-code-recipe-generator.git
    cd claude-code-recipe-generator
    ```
 
@@ -46,8 +46,10 @@ This is a **Claude Code custom skill** — a structured prompt system that turns
 claude-code-recipe-generator/
 ├── .claude/
 │   └── skills/
-│       └── recipe/
-│           └── SKILL.md          # The skill definition
+│       ├── recipe/
+│       │   └── SKILL.md          # Recipe generation skill
+│       └── shopping-list/
+│           └── SKILL.md          # Shopping list aggregation skill
 ├── data/
 │   ├── dietary-requirements.md   # Medical/dietary constraints (customize this!)
 │   ├── preferences.md            # Personal preferences
@@ -55,7 +57,8 @@ claude-code-recipe-generator/
 │   ├── flavor-profiles.md        # Cuisine and flavor options
 │   ├── prep-timings.md           # Realistic time estimates
 │   ├── recipe-format.md          # Output template
-│   └── recipe-best-practices.md  # Culinary principles
+│   ├── recipe-best-practices.md  # Culinary principles
+│   └── grocery-aisles.md         # Store aisle configuration
 ├── recipes/
 │   ├── 1-serving/                # Single-serving recipes
 │   │   ├── *.md                  # Markdown recipes
@@ -63,6 +66,8 @@ claude-code-recipe-generator/
 │   └── 2-serving/                # Two-serving recipes
 │       ├── *.md
 │       └── *.paprikarecipe
+├── lists/                        # Generated shopping lists
+│   └── *.md
 └── README.md
 ```
 
@@ -178,6 +183,21 @@ Recipes are organized by serving count:
 
 You can modify the skill to add more options (meal prep batches, family-sized, etc.).
 
+### Shopping List Aggregation
+
+Use `/shopping-list` to combine ingredients from multiple recipes into a single, organized shopping list:
+
+```
+/shopping-list recipes/1-serving/beef-dish.md recipes/2-serving/chicken.md
+```
+
+Features:
+- **Organized by store aisle** — customize `data/grocery-aisles.md` for your store layout
+- **Consolidates duplicates** — "3 eggs" + "4 eggs" = "7 eggs"
+- **Handles compound ingredients** — asks whether to expand "garlic-infused olive oil" into garlic + olive oil
+- **Flags pantry staples** — items marked "MIGHT HAVE" for things you likely already own
+- **Copy-paste ready** — output format works with Todoist, Things 3, Apple Reminders, or any to-do app
+
 ## How Claude Code Skills Work
 
 Claude Code skills are defined in `.claude/skills/*/SKILL.md` files. When you type a slash command (like `/recipe`), Claude:
@@ -241,10 +261,35 @@ Claude: [Generates complete recipe with instructions, shopping list, nutrition]
         Paprika export: recipes/2-serving/2024-01-15-lemon-herb-salmon.paprikarecipe
 ```
 
+### Shopping List Example
+
+```
+You: /shopping-list recipes/1-serving/beef-dish.md recipes/2-serving/chicken.md
+
+Claude: I found 1 compound ingredient:
+
+        Garlic-infused olive oil (used in 2 recipes)
+        ├─ Buy components (garlic + olive oil)
+        ├─ Already have it
+        └─ Buy pre-made
+
+You: Already have it
+
+Claude: # Shopping List
+        2 recipes · January 15, 2024
+
+        ## Produce
+        - Fresh ginger (2 small knobs)
+        - Zucchini, medium (2)
+        - Broccoli (2 heads)
+        ...
+
+        Shopping list saved to: lists/shopping-list-2024-01-15.md
+```
+
 ## Limitations
 
 - **Requires Claude Code** — This is not a standalone app; it's a skill for Claude Code
-- **No automatic shopping list aggregation** — Each recipe has its own shopping list
 - **Time estimates are approximations** — Actual times vary based on your kitchen and energy level
 - **Nutritional info is calculated, not verified** — Values are estimates based on ingredient databases
 - **You must customize the data files** — The defaults are specific to one person's medical diet
@@ -258,7 +303,6 @@ Ideas for contributions:
 - More flavor profiles / cuisines
 - Meal prep batch cooking support
 - Integration with other recipe apps
-- Shopping list aggregation across multiple recipes
 
 ## License
 
