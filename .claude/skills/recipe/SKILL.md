@@ -1,6 +1,6 @@
 ---
 name: recipe
-description: Generate keto-friendly recipes respecting APOE4, MCAS, and personal dietary constraints. Use when the user wants meal ideas, recipe suggestions, or help planning keto meals.
+description: Generate personalized recipes respecting your dietary constraints and preferences. Use when you want meal ideas or recipe suggestions.
 ---
 
 # Recipe Generator
