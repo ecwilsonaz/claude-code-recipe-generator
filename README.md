@@ -4,7 +4,7 @@ A Claude Code skill that generates personalized recipes with realistic time esti
 
 ## Demo
 
-[![Demo Video](https://img.youtube.com/vi/KrO2qYf6wCQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=KrO2qYf6wCQ)
+[![Demo Video](https://img.youtube.com/vi/KrO2qYf6wCQ/hqdefault.jpg)](https://www.youtube.com/watch?v=KrO2qYf6wCQ)
 
 ## What This Is
 
