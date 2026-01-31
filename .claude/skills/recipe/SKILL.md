@@ -86,7 +86,22 @@ Present flavor profiles from `data/flavor-profiles.md`:
   - "Spicy & Bold" (description: "Heat with complexity, chilies, ginger")
   - "Rich & Savory" (description: "Deep umami, mushrooms, slow-cooked")
 
-### Step 5: Brainstorm Recipes
+### Step 5: Additional Guidance (Optional)
+
+Ask the user if they have any specific ideas, cravings, or requirements:
+
+**Question: Special Requests**
+- Header: "Ideas"
+- Options:
+  - "No specific requests" (description: "Surprise me with your best ideas")
+  - "Crispy/crunchy textures" (description: "Browned edges, crispy skin, toasted elements")
+  - "Comfort food vibes" (description: "Warm, cozy, satisfying")
+  - "Light and fresh" (description: "Bright, not too heavy")
+- Note: User can select "Other" to type specific guidance like "browned and bubbly cheese" or "something I can eat with my hands"
+
+If the user provides custom guidance, incorporate it into the brainstorm criteria.
+
+### Step 6: Brainstorm Recipes
 
 Generate exactly 5 recipe ideas that:
 - ✅ Meet ALL dietary requirements (keto, APOE4, MCAS) — NO EXCEPTIONS
@@ -113,7 +128,7 @@ Present each idea with:
 - **Medium:** Some active steps but forgiving timing. Good flow.
 - **High:** Requires sustained attention or precise timing. Multiple simultaneous tasks.
 
-### Step 6: User Selection
+### Step 7: User Selection
 
 Ask the user to pick a recipe:
 
@@ -122,7 +137,7 @@ Ask the user to pick a recipe:
 - Options: List the 5 recipe names
 - Include "Other" option for modifications or re-brainstorming
 
-### Step 7: Generate Full Recipe
+### Step 8: Generate Full Recipe
 
 Create the complete recipe following `data/recipe-format.md` template:
 
@@ -142,7 +157,7 @@ Create the complete recipe following `data/recipe-format.md` template:
    - Suggest batching prep tasks together
    - Recommend timer usage for specific steps
 
-### Step 8: Save Recipe
+### Step 9: Save Recipe
 
 Save the recipe to a subfolder based on servings:
 - **1 serving:** `recipes/1-serving/`
@@ -154,7 +169,7 @@ Filename format: `YYYY-MM-DD-recipe-name.md`
 
 Create the subfolder if it doesn't exist.
 
-### Step 9: Export to Paprika
+### Step 10: Export to Paprika
 
 Generate a `.paprikarecipe` file for import into Paprika app.
 
@@ -240,6 +255,10 @@ User: Chicken, Broccoli and Zucchini
 [AskUserQuestion about flavor profile]
 
 User: Mediterranean
+
+[AskUserQuestion about additional guidance]
+
+User: No specific requests (or: "something with browned and bubbly cheese")
 
 Claude: Here are 5 Mediterranean-inspired chicken recipes...
 

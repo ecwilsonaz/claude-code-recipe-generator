@@ -251,6 +251,12 @@ Claude: What flavor direction sounds good?
 
 You: Mediterranean
 
+Claude: Any special requests or ideas for this recipe?
+
+        [Shows options: No specific requests, Crispy/crunchy, Comfort food, Light and fresh]
+
+You: Something with browned and bubbly cheese
+
 Claude: Here are 5 recipe ideas...
 
         1. Lemon-Herb Salmon with Roasted Broccoli
