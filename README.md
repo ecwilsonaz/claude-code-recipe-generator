@@ -2,6 +2,10 @@
 
 A Claude Code skill that generates personalized recipes with realistic time estimates, dietary restriction compliance, and Paprika app export.
 
+## Demo
+
+[![Demo Video](https://img.youtube.com/vi/KrO2qYf6wCQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=KrO2qYf6wCQ)
+
 ## What This Is
 
 This is a **Claude Code custom skill** — a structured prompt system that turns Claude into a specialized recipe generator. When you type `/recipe`, Claude walks you through creating a meal that fits your exact dietary needs, cooking style, and available time.
